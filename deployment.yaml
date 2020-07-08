@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: gcpssmyapp
-        image: somaam/firstimage:tagversion
+        image: somaam/ssimage:tagversion
         ports:
         - containerPort: 8080
 ---
