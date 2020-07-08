@@ -29,18 +29,26 @@ pipeline {
 		}
 	   }
 	   stage('Build Docker Image') { 
+		  echo "Inside docker build..."
 		steps {
+		 	echo "Inside steps..."
                    script {
+			   echo "Inside script..."
                     myimage = docker.build("/somaam/firstimage:${env.BUILD_ID}")
+			   echo "After image.."
                    }
                 }
 	   }
 	   stage("Push Docker Image") {
+		   echo "Inside push docker image..."
                 steps {
+			echo "push docker steps.."
                    script {
+			   echo "Inside script..."
                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
                     
-                            myimage.push("${env.BUILD_ID}")		
+                            myimage.push("${env.BUILD_ID}")	
+			    echo "After push..."
                      }
 			   
                    }
