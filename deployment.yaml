@@ -31,5 +31,5 @@ spec:
     app: gcpssmyapp
   ports:
   - protocol: TCP
-    port: 6655
+    port: 5611
     targetPort: 8080
