@@ -31,7 +31,7 @@ pipeline {
 	   stage('Build Docker Image') { 
 		steps {
                    script {
-                    myimage = docker.build("somaam/firstimage:${env.BUILD_ID}")
+                    myimage = docker.build("somaam/somaam/firstimage:${env.BUILD_ID}")
                    }
                 }
 	   }
