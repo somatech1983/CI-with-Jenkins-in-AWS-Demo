@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: gcpssmyapp
-        image: somaam/ssimage:tagversion
+        image: image: eu.gcr.io/sincere-muse-275812/somaam/ssimage:tagversion
         ports:
         - containerPort: 8080
 ---
