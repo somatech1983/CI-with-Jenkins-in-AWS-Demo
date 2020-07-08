@@ -2,7 +2,7 @@ pipeline {
     agent any 	
 	environment {
 		
-				PROJECT_ID = 'sincere-muse-275812'
+		PROJECT_ID = 'sincere-muse-275812'
                 CLUSTER_NAME = 'kubernetes-soma'
                 LOCATION = 'europe-north1-c'
                 CREDENTIALS_ID = 'k8somaserviceaccount'
@@ -34,7 +34,8 @@ pipeline {
 		 	echo "Inside steps..."
                    script {
 			   echo "Inside script..."
-                    myimage = docker.build("somaam/ssimage:${env.BUILD_ID}")
+                    	   //myimage = docker.build("somaam/ssimage:${env.BUILD_ID}")
+			    myimage = docker.build("eu.gcr.io/sincere-muse-275812/somaam/ssimage:${env.BUILD_ID}")
 			   echo "After image.."
                    }
                 }
@@ -45,7 +46,8 @@ pipeline {
 			echo "push docker steps.."
                    script {
 			   echo "Inside script..."
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+                           //docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+			   docker.withRegistry('https://eu.gcr.io') {
                     
                             myimage.push("${env.BUILD_ID}")	
 			    echo "After push..."
