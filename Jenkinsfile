@@ -34,7 +34,7 @@ pipeline {
 		 	echo "Inside steps..."
                    script {
 			   echo "Inside script..."
-                    myimage = docker.build("somaam/firstimage:${env.BUILD_ID}")
+                    myimage = docker.build("somaam/ssimage:${env.BUILD_ID}")
 			   echo "After image.."
                    }
                 }
