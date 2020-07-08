@@ -5,7 +5,7 @@ pipeline {
 		PROJECT_ID = 'sincere-muse-275812'
                 CLUSTER_NAME = 'kubernetes-soma'
                 LOCATION = 'europe-north1-c'
-                CREDENTIALS_ID = 'k8somaserviceaccount'
+                CREDENTIALS_ID = 'gcr-ss-service-account'
 		
 	}
 	
