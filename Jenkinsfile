@@ -29,7 +29,7 @@ pipeline {
 		}
 	   }
 	   stage('Build Docker Image') { 
-		  echo "Inside docker build..."
+		
 		steps {
 		 	echo "Inside steps..."
                    script {
@@ -40,7 +40,7 @@ pipeline {
                 }
 	   }
 	   stage("Push Docker Image") {
-		   echo "Inside push docker image..."
+		   
                 steps {
 			echo "push docker steps.."
                    script {
